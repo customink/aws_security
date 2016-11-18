@@ -34,7 +34,7 @@ module Aws
 
         require 'fog/aws'
       end
-      options = { provider: 'AWS', region: @current_resource.region }
+      options = { provider: 'AWS', region: @current_resource.region, use_iam_profile: true }
 
       if @current_resource.mocking
         options[:host]   = 'localhost'
