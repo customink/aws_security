@@ -51,3 +51,4 @@ Policyfile.lock.json
 # secrets for testing this Cookbook
 test/fixtures/encrypted_data_bag_secret
 test/fixtures/data_bags/
+/.project

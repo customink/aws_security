@@ -70,6 +70,11 @@ def load_current_resource
     @current_resource.send(attrib, @new_resource.send(attrib))
   end
 
+  if @new_resource.aws_access_key_id || node['aws_security']['aws_access_key_id']
+    @current_resource.mocking(@new_resource.mocking ||
+      node['aws_security']['mocking'])
+  end
+  
   if @new_resource.group
     if group_is_id?(@new_resource.group)
       @current_resource.source_group_id(@new_resource.group)
