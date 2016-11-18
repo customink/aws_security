@@ -56,9 +56,7 @@ def load_current_resource
   @current_resource.mocking(@new_resource.mocking ||
                             node['aws_security']['mocking'])
 
-  %w(aws_access_key_id
-     aws_secret_access_key
-     groupname
+  %w(groupname
      name
      cidr_ip
      group
@@ -68,11 +66,6 @@ def load_current_resource
      region
   ).each do |attrib|
     @current_resource.send(attrib, @new_resource.send(attrib))
-  end
-
-  if @new_resource.aws_access_key_id || node['aws_security']['aws_access_key_id']
-    @current_resource.mocking(@new_resource.mocking ||
-      node['aws_security']['mocking'])
   end
   
   if @new_resource.group

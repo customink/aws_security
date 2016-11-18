@@ -36,14 +36,6 @@ module Aws
       end
       options = { provider: 'AWS', region: @current_resource.region }
 
-      if @current_resource.aws_access_key_id
-        # Only pass credentials if we have them. This allows Fog to fall back
-        # to IAM roles.
-        options[:aws_access_key_id] = @current_resource.aws_access_key_id
-        options[:aws_secret_access_key] =
-          @current_resource.aws_secret_access_key
-      end
-
       if @current_resource.mocking
         options[:host]   = 'localhost'
         options[:port]   = 5000

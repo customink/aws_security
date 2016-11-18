@@ -74,8 +74,6 @@ Actions:
 Attribute Parameters:
 
 - `name` - Name attribute
-- `aws_access_key_id` - required
-- `aws_secret_access_key` - required
 - `groupname` - optional
 - `description` - optional
 - `vpcid` - optional
