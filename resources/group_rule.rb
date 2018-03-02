@@ -46,7 +46,7 @@ def self.valid_group?(group)
 end
 
 def self.valid_group_id?(group_id)
-  return true if group_id =~ /^sg-[a-zA-Z0-9]{8}$/
+  return true if group_id =~ /^sg-[a-zA-Z0-9]{17}$/
 end
 
 attr_accessor :exists
